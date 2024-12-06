@@ -4,12 +4,85 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bloqueador de Site</title>
-    <link rel="stylesheet" href="/static/css/style.css">
+    <style>
+        /* Resetando estilos padrões */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Estilos gerais */
+        body {
+            background: #f2f2f2; /* Fundo claro */
+            color: #333;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Caixa de mensagem centralizada */
+        .message-box {
+            background-color: #fff; /* Fundo branco */
+            border-radius: 15px;
+            padding: 40px;
+            width: 80%;
+            max-width: 600px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Sombra leve */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .message-box:hover {
+            transform: scale(1.02); /* Efeito de aumento suave ao passar o mouse */
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2); /* Aumenta a sombra */
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #4b0082;
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 25px;
+            color: #555;
+        }
+
+        button {
+            padding: 15px 30px;
+            background-color: #4b0082;
+            border: none;
+            border-radius: 8px;
+            color: #fff;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #6a0dad; /* Cor de hover */
+            transform: scale(1.05); /* Efeito de aumento */
+        }
+
+        button:active {
+            background-color: #3d0066; /* Cor de clique */
+        }
+    </style>
 </head>
 <body>
-    <h1>{{ message }}</h1>
-    <a href="{{ back_url }}">
-        <button>Voltar</button>
-    </a>
+
+    <div class="message-box">
+        <h1>{{ message }}</h1>
+        <p>O site foi bloqueado com sucesso!</p>
+        <a href="{{ back_url }}">
+            <button>Voltar</button>
+        </a>
+    </div>
+
 </body>
 </html>
